@@ -1,0 +1,72 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: lightgrey;
+  background-size: cover;
+}
+
+.navbar {
+  position: fixed;
+    top: 0px;
+  z-index: 10;
+  height: 65px;
+  background-color: black;
+  width: 100%;
+  color: white;
+  font-size: 8;
+}
+
+.navItems {
+
+  position: fixed;
+    top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+  font-size: 20px;
+  font-family: veranda;
+  font-style: veranda;
+  background-color: black;
+  width: 50%;
+  text-align: center;
+
+}
+
+.navItems > span {
+  margin-left: 2%;
+  margin-right: 2%;
+  padding: 5px;
+  background-color: black;
+}
+
+.logo {
+  background-image: url("images/face.jpg");
+  width: 200px;
+}
+
+.mainScreen {
+  background-color: green;
+  text-align: center;
+  width: 600px;
+  margin-left: 10%;
+  position: fixed;
+    top: 100px;
+}
+
+.player1Score {
+  background-color: blue;
+  width: 100px;
+  float: left;
+}
+
+.gameBoard {
+  background-color: yellow;
+  width: 200px;
+  float: left;
+}
+
+.player2Score {
+  background-color: teal;
+  width: 100px;
+  float: left;
+}
+
