@@ -1,17 +1,141 @@
 'use strict';
 
+var ticTacToe = {
+  board: [['A','B','C'],['D','E','F'],['G','H','I']],
+  // move: 0;
+  //   var something;
+  //   return true;
+  // };
+};
+
+var player1 = 'X';
+var player2 = 'O';
+
+console.log(ticTacToe.board[0]);
+console.log(ticTacToe.board[1]);
+console.log(ticTacToe.board[2]);
+
+console.log(ticTacToe.board[0][1]);
+
 //I think this will be handled by a 'click' event handler, but if I was going to use a prompt/entry field I would do it this way.
-var getInput = function() {
-  var input = '';
+var getInput = function(input) {
 
   return input;
 };
 
 //This function should change the value of the inner html from the square number to X or O depending on the player (maybe using setPlayer()??)
-var changeValue = function() {
+var changeValue = function(row,col,player) {
   var newValue = '';
+  ticTacToe.board[row,col,player] = player;
   return newValue;
 };
+
+var player = 'O';
+ticTacToe.board[1][0] = player;
+ticTacToe.board[1][1] = player;
+ticTacToe.board[1][2] = player;
+
+// ticTacToe.board[2][0] = player;
+// ticTacToe.board[2][1] = player;
+// ticTacToe.board[2][2] = player;
+
+
+// console.log(ticTacToe.board[0]);
+// console.log(ticTacToe.board[1]);
+// console.log(ticTacToe.board[2]);
+
+var threeInARow = function(player) {
+  //includes 0,0
+  if(ticTacToe.board[0][0] === player)
+  {
+    if(ticTacToe.board[1][0] === player)
+    {
+      if(ticTacToe.board[2][0] === player)
+      {
+        console.log("X down the 1st column");
+        return player;
+      }
+    }
+    else if(ticTacToe.board[0][1] === player)
+    {
+      if(ticTacToe.board[0][2] === player)
+      {
+        console.log("X down the 1st row");
+        return player;
+      }
+    }
+    else if(ticTacToe.board[1][1] === player)
+    {
+      if(ticTacToe.board[2][2] === player)
+      {
+        console.log("X diag row");
+        return player;
+      }
+    }
+  }
+  //includes 0,1
+  if(ticTacToe.board[0][1] === player)
+  {
+    if(ticTacToe.board[1][1] === player)
+    {
+      if(ticTacToe.board[2][1] === player)
+      {
+        console.log("X down middle");
+        return player;
+      }
+    }
+  }
+  //includes 0,2
+  if(ticTacToe.board[0][2] === player)
+  {
+    if(ticTacToe.board[1][2] === player)
+    {
+      if(ticTacToe.board[2][2] === player)
+      {
+        console.log("X down 3rd row");
+        return player;
+      }
+    }
+  }
+  //includes 1,0
+  if(ticTacToe.board[1][0] === player)
+  {
+    if(ticTacToe.board[1][1] === player)
+    {
+      if(ticTacToe.board[1][2] === player)
+      {
+        console.log("X across the middle row");
+        return player;
+      }
+    }
+  }
+  //includes 2,0
+  if(ticTacToe.board[2][0] === player)
+  {
+    console.log("You got here.");
+    if(ticTacToe.board[2][1] === player)
+    {
+      if(ticTacToe.board[2][2] === player)
+      {
+        console.log("X across the bottom row");
+        return player;
+      }
+    }
+  }
+
+  // else if(ticTacToe.board[0][2] === player)
+  // {
+  //   if(ticTacToe.board[1][2] === player)
+  //   {
+  //     if(ticTacToe.board[2][2] === player)
+  //     {
+  //       return player;
+  //     }
+  //   }
+  // }
+};
+
+console.log("Winner is " + threeInARow(player1));
 
 //This function should run to determine which player's turn it is, and maybe when setting the square to a certain value
 var setPlayer = function() {
