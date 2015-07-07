@@ -3,15 +3,17 @@
   <head>
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
   </head>
   <body>
   <div class = "navbar">
     <div class = "logo">
+    <img src="images/face.jpg"/>
     </div>
     <div class ="navItems">
+      <span>Chris' TicTacToe Game!</span>
       <span>Home</span>
       <span>New Game</span>
-      <span>High Scores</span>
     </div>
   </div>
   <div class="mainScreen">
@@ -26,35 +28,35 @@
       <div id="gameBoardMap">
         <h3>Gameboard</h3>
         <div class="colOne">
-          <div id="sqOne" class="squares" class="hvr-grow">
+          <div id="sqOne" class="square" class="hvr-grow">
           1
           </div>
-          <div id="sqTwo" class="squares" class="hvr-grow">
+          <div id="sqTwo" class="square" class="hvr-grow">
           2
           </div>
-          <div id="sqThree" class="squares" class="hvr-grow">
+          <div id="sqThree" class="square" class="hvr-grow">
           3
           </div>
         </div>
         <div class="colTwo">
-          <div id="sqFour" class="squares" class="hvr-grow">
+          <div id="sqFour" class="square" class="hvr-grow">
           4
           </div>
-          <div id="sqFive" class="squares">
+          <div id="sqFive" class="square">
           5
           </div>
-          <div id="sqSix" class="squares">
+          <div id="sqSix" class="square">
           6
           </div>
         </div>
         <div class="colThree">
-          <div id="sqSeven" class="squares">
+          <div id="sqSeven" class="square">
           7
           </div>
-          <div id="sqEight" class="squares">
+          <div id="sqEight" class="square">
           8
           </div>
-          <div id="sqNine" class="squares">
+          <div id="sqNine" class="square">
           9
           </div>
         </div>
@@ -67,5 +69,7 @@
       </div>
     </div>
   </div>
+  <script src="script/jq.js" type="text/javascript" charset="utf-8" async defer></script>
+
   </body>
 </html>
