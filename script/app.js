@@ -1,7 +1,9 @@
 'use strict';
 
+var newBoard = ['','','','','','','','',''];
+
 var ticTacToe = {
-  board: [['A','B','C'],['D','E','F'],['G','H','I']],
+  board: ['','','','','','','','','']
   // move: 0;
   //   var something;
   //   return true;
@@ -11,12 +13,6 @@ var ticTacToe = {
 var player1 = 'X';
 var player2 = 'O';
 
-console.log(ticTacToe.board[0]);
-console.log(ticTacToe.board[1]);
-console.log(ticTacToe.board[2]);
-
-console.log(ticTacToe.board[0][1]);
-
 //I think this will be handled by a 'click' event handler, but if I was going to use a prompt/entry field I would do it this way.
 var getInput = function(input) {
 
@@ -24,16 +20,11 @@ var getInput = function(input) {
 };
 
 //This function should change the value of the inner html from the square number to X or O depending on the player (maybe using setPlayer()??)
-var changeValue = function(row,col,player) {
+var changeValue = function(index,player) {
   var newValue = '';
-  ticTacToe.board[row,col,player] = player;
+  ticTacToe.board[index,player] = player;
   return newValue;
 };
-
-var player = 'O';
-ticTacToe.board[1][0] = player;
-ticTacToe.board[1][1] = player;
-ticTacToe.board[1][2] = player;
 
 // ticTacToe.board[2][0] = player;
 // ticTacToe.board[2][1] = player;
@@ -46,27 +37,27 @@ ticTacToe.board[1][2] = player;
 
 var threeInARow = function(player) {
   //includes 0,0
-  if(ticTacToe.board[0][0] === player)
+  if(ticTacToe.board[0] === player)
   {
-    if(ticTacToe.board[1][0] === player)
+    if(ticTacToe.board[1] === player)
     {
-      if(ticTacToe.board[2][0] === player)
+      if(ticTacToe.board[2] === player)
       {
         console.log("X down the 1st column");
         return player;
       }
     }
-    else if(ticTacToe.board[0][1] === player)
+    else if(ticTacToe.board[3] === player)
     {
-      if(ticTacToe.board[0][2] === player)
+      if(ticTacToe.board[6] === player)
       {
         console.log("X down the 1st row");
         return player;
       }
     }
-    else if(ticTacToe.board[1][1] === player)
+    else if(ticTacToe.board[4] === player)
     {
-      if(ticTacToe.board[2][2] === player)
+      if(ticTacToe.board[8] === player)
       {
         console.log("X diag row");
         return player;
@@ -74,11 +65,11 @@ var threeInARow = function(player) {
     }
   }
   //includes 0,1
-  if(ticTacToe.board[0][1] === player)
+  if(ticTacToe.board[1] === player)
   {
-    if(ticTacToe.board[1][1] === player)
+    if(ticTacToe.board[4] === player)
     {
-      if(ticTacToe.board[2][1] === player)
+      if(ticTacToe.board[7] === player)
       {
         console.log("X down middle");
         return player;
@@ -86,11 +77,11 @@ var threeInARow = function(player) {
     }
   }
   //includes 0,2
-  if(ticTacToe.board[0][2] === player)
+  if(ticTacToe.board[2] === player)
   {
-    if(ticTacToe.board[1][2] === player)
+    if(ticTacToe.board[5] === player)
     {
-      if(ticTacToe.board[2][2] === player)
+      if(ticTacToe.board[8] === player)
       {
         console.log("X down 3rd row");
         return player;
