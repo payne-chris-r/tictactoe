@@ -1,15 +1,14 @@
 'use strict';
 
 $(document).ready(function(){
-  var player = 'X';
   var gameOver = false;
-  var moves = 0;
 
 $('#newGame').click(function(){
   if(gameOver === true)
   {
     startNewGame();
     gameOver = false;
+    moves = 0;
   }
   else{
     if(confirm("There's a game being played, are you sure you want to start a new one?!?"))
@@ -33,12 +32,13 @@ $('.square').click(function(){
       ticTacToe.board[this.id] = player;
       //change the DOM to display that change
       $(this).html(ticTacToe.board[this.id]);
-
+      setIndexAndValue(this.id, player);
       //check for winner
       if(threeInARow(player))
       {
         showFinalBoard(player);
         updateScore(player);
+        setIndexAndValue(this.id, player);
         setTimeout(function(){
         alert(player + " won!");}, 1000);
         gameOver = true;

@@ -1,7 +1,5 @@
 'use strict';
 
-var newBoard = ['','','','','','','','',''];
-
 var ticTacToe = {
   board: ['','','','','','','','','']
   // move: 0;
@@ -10,11 +8,10 @@ var ticTacToe = {
   // };
 };
 
-var player1 = 'X';
-var player2 = 'O';
+var player = 'X';
 var p1Score = 0;
 var p2Score = 0;
-
+var moves = 0;
 
 var updateScore = function(player){
   if(player === 'X')
@@ -24,14 +21,14 @@ var updateScore = function(player){
   else {
     $('#p2Score').html(++p2Score);
   }
-  console.log(player);
 };
 
 //This function should change the value of the inner html from the square number to X or O depending on the player (maybe using setPlayer()??)
-var changeValue = function(index,player) {
-  var newValue = '';
-  ticTacToe.board[index,player] = player;
-  return newValue;
+var setIndexAndValue = function(index,player) {
+  //set the index = index
+  $('#index').val(index);
+  //set the value = player
+  $('#value').val(player);
 };
 
 var threeInARow = function(player) {
@@ -157,13 +154,9 @@ var showFinalBoard = function(player){
         }
 };
 
-//this function needs to run after a square has been played in to make sure no one else can play in that square again.
-var setUneditable = function() {
-  var square = '';
-  return square;
+var resetMoves = function(){
+  moves = 0;
 };
-
-var setInput
 
 //this function will decide when the game is over, and should run after each player takes his/her turn.
 var declareWinner = function (){

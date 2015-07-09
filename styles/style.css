@@ -61,6 +61,12 @@ body {
   /*overflow-y: hidden;
 */}
 
+.actionCenter {
+  position: fixed;
+  top: 75px;
+  margin-left: 10px;
+}
+
 .player1Score {
   background-color: #FFC72B;
   width: 15.5%;
