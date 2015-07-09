@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 $(document).ready(function(){
   var player = 'X';
   var gameOver = false;
@@ -49,13 +47,15 @@ $('.square').click(function(){
         //clear board
         //ticTacToe.board = newBoard;
       }
-      // else{
-      //   moves++;
-      //   if(moves === 8)
-      //   {
-      //     alert("You motha fuckahs tied!");
-      //   }
-      // }
+      else{
+        moves++;
+        if(moves === 9)
+        {
+          alert("You motha fuckahs tied!");
+          startNewGame();
+          moves = 0;
+        }
+      }
       //switch player
       player = switchPlayer(player);
     }
