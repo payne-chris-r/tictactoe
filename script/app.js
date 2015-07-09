@@ -12,11 +12,18 @@ var ticTacToe = {
 
 var player1 = 'X';
 var player2 = 'O';
+var p1Score = 0;
+var p2Score = 0;
 
-//I think this will be handled by a 'click' event handler, but if I was going to use a prompt/entry field I would do it this way.
-var getInput = function(input) {
-
-  return input;
+var updateScore = function(player){
+  if(player === 'X')
+  {
+    $('#p1Score').html(++p1Score);
+  }
+  else {
+    console.log("p2Score is " + p2Score);
+  }
+  console.log(player);
 };
 
 //This function should change the value of the inner html from the square number to X or O depending on the player (maybe using setPlayer()??)
@@ -25,15 +32,6 @@ var changeValue = function(index,player) {
   ticTacToe.board[index,player] = player;
   return newValue;
 };
-
-// ticTacToe.board[2][0] = player;
-// ticTacToe.board[2][1] = player;
-// ticTacToe.board[2][2] = player;
-
-
-// console.log(ticTacToe.board[0]);
-// console.log(ticTacToe.board[1]);
-// console.log(ticTacToe.board[2]);
 
 var threeInARow = function(player) {
   //includes 0,0
@@ -133,8 +131,6 @@ var threeInARow = function(player) {
   // }
 };
 
-console.log("Winner is " + threeInARow(player1));
-
 //This function should run to determine which player's turn it is, and maybe when setting the square to a certain value
 var switchPlayer = function(player) {
   if(player === 'O')
@@ -145,6 +141,19 @@ var switchPlayer = function(player) {
         player = 'O';
       }
   return player;
+};
+
+var showFinalBoard = function(player){
+  for(var i = 0; i < ticTacToe.board.length; i++){
+          if(ticTacToe.board[i] === '')
+          {
+            $('#' + i).fadeTo('slow', 0.5);
+            $('#' + i).html("--");
+            ticTacToe.board[i] = "--";
+          }
+          else if(ticTacToe.board[i] === player)
+            $('#' + i).fadeTo('fast', 1);
+        }
 };
 
 //this function needs to run after a square has been played in to make sure no one else can play in that square again.

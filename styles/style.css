@@ -85,6 +85,7 @@ body {
   height: 80%;
   background-color: #FFC72B;
   font-size: 25px;
+  margin-top: 0px;
 }
 
 .player2Score {
@@ -97,18 +98,15 @@ body {
   font-size: 25px;
 }
 
-#p1score {
+#p1Score {
   font-size: 100px;
-  color: red;
   text-align: center;
 }
 
-#p2score {
+#p2Score {
   font-size: 100px;
-  color: red;
   text-align: center;
 }
-
 
 .playerBoardText {
 /*
