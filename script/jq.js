@@ -35,13 +35,14 @@ $('.square').click(function(){
         //ticTacToe.board = newBoard;
       }
       //switch player
-      if(player === 'O')
-      {
-        player = 'X';
-      }
-      else{
-        player = 'O';
-      }
+      player = switchPlayer(player);
+      // if(player === 'O')
+      // // {
+      //   player = 'X';
+      // }
+      // else{
+      //   player = 'O';
+      // }
     }
     else{
       alert("Don't tread on me!");
