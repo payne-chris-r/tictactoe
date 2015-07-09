@@ -1,7 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-color: lightgrey;
+  background-color: #0971B2;
   background-size: cover;
 }
 
@@ -50,7 +50,7 @@ body {
 }
 
 .mainScreen {
-  background-color: green;
+  background-color: #000000;
   text-align: center;
   width: 80%;
   height: 80%;
@@ -59,20 +59,21 @@ body {
   position: fixed;
     top: 100px;
   float: left;
-  overflow-y: hidden;
-}
+  /*overflow-y: hidden;
+*/}
 
 .player1Score {
-  background-color: blue;
+  background-color: #FFC72B;
   width: 15.5%;
   height: 92%;
   float: left;
   margin: 1.5%;
   z-index: 2;
+  font-size: 25px;
 }
 
 .gameBoardSpace {
-  background-color: yellow;
+  background-color: #FFC72B;
   width: 60%;
   height: 92%;
   float: left;
@@ -82,18 +83,32 @@ body {
 
 #gameBoardMap {
   height: 80%;
-  background-color: cyan;
-
+  background-color: #FFC72B;
+  font-size: 25px;
 }
 
 .player2Score {
-  background-color: teal;
+  background-color: #FFC72B;
   width: 15.5%;
   height: 92%;
   float: left;
   margin: 1.5%;
   z-index: 2;
+  font-size: 25px;
 }
+
+#p1score {
+  font-size: 100px;
+  color: red;
+  text-align: center;
+}
+
+#p2score {
+  font-size: 100px;
+  color: red;
+  text-align: center;
+}
+
 
 .playerBoardText {
 /*
@@ -107,7 +122,7 @@ body {
   margin: 3%;
   margin-left: 1.5%;
   margin-right: 1.5%;
-  background-color: orange;
+  background-color: #1985FF;
   font-size: 100px;
   text-align: center;
   /*vertical-align: middle;*/

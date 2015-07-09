@@ -20,12 +20,14 @@ $('.square').click(function(){
       //check for winner
       if(threeInARow(player))
       {
-        // for(var i; i < ticTacToe.board.length; i++){
-        //   if(ticTacToe.board[i] === '')
-        //   {
-        //     $(this).fadeTo('slow' 0.5);
-        //   }
-        // }
+        for(var i = 0; i < ticTacToe.board.length; i++){
+          if(ticTacToe.board[i] === '')
+          {
+            $('#' + i).fadeTo('slow', 0.5);
+            $('#' + i).html("--");
+          }
+        }
+
         setTimeout(function(){
         alert(player + " won!");}, 500);
         return true;

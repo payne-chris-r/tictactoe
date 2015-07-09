@@ -87,13 +87,21 @@ var threeInARow = function(player) {
         return player;
       }
     }
+    else if(ticTacToe.board[4] === player)
+    {
+      if(ticTacToe.board[6] === player)
+      {
+        console.log("X backwards diagonal");
+        return player;
+      }
+    }
   }
   //includes 1,0
-  if(ticTacToe.board[1][0] === player)
+  if(ticTacToe.board[3] === player)
   {
-    if(ticTacToe.board[1][1] === player)
+    if(ticTacToe.board[4] === player)
     {
-      if(ticTacToe.board[1][2] === player)
+      if(ticTacToe.board[5] === player)
       {
         console.log("X across the middle row");
         return player;
@@ -101,12 +109,11 @@ var threeInARow = function(player) {
     }
   }
   //includes 2,0
-  if(ticTacToe.board[2][0] === player)
+  if(ticTacToe.board[6] === player)
   {
-    console.log("You got here.");
-    if(ticTacToe.board[2][1] === player)
+    if(ticTacToe.board[7] === player)
     {
-      if(ticTacToe.board[2][2] === player)
+      if(ticTacToe.board[8] === player)
       {
         console.log("X across the bottom row");
         return player;
@@ -129,8 +136,14 @@ var threeInARow = function(player) {
 console.log("Winner is " + threeInARow(player1));
 
 //This function should run to determine which player's turn it is, and maybe when setting the square to a certain value
-var setPlayer = function() {
-  var player = '';
+var switchPlayer = function(player) {
+  if(player === 'O')
+      {
+        player = 'X';
+      }
+      else{
+        player = 'O';
+      }
   return player;
 };
 
