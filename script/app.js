@@ -15,13 +15,14 @@ var player2 = 'O';
 var p1Score = 0;
 var p2Score = 0;
 
+
 var updateScore = function(player){
   if(player === 'X')
   {
     $('#p1Score').html(++p1Score);
   }
   else {
-    console.log("p2Score is " + p2Score);
+    $('#p2Score').html(++p2Score);
   }
   console.log(player);
 };
@@ -171,3 +172,14 @@ var declareWinner = function (){
   return winner;
 };
 
+var startNewGame = function(){
+
+  console.log(ticTacToe.board);
+  for(var i = 0; i < ticTacToe.board.length; i++)
+  {
+    ticTacToe.board[i] = '';
+    $('#' + i).html("-");
+    $('#' + i).fadeTo('fast', 1);
+  }
+  console.log(ticTacToe.board);
+};

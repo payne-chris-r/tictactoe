@@ -1,9 +1,27 @@
 'use strict';
 
 
+
 $(document).ready(function(){
   var player = 'X';
   var gameOver = false;
+  var moves = 0;
+
+$('#newGame').click(function(){
+  if(gameOver === true)
+  {
+    startNewGame();
+    gameOver = false;
+  }
+  else{
+    if(confirm("There's a game being played, are you sure you want to start a new one?!?"))
+    {
+    startNewGame();
+    gameOver = false;
+    moves = 0;
+    }
+  }
+});
 
 $('.square').click(function(){
   //if(this.id) is uneditable
@@ -22,25 +40,22 @@ $('.square').click(function(){
       if(threeInARow(player))
       {
         showFinalBoard(player);
-        // for(var i = 0; i < ticTacToe.board.length; i++){
-        //   if(ticTacToe.board[i] === '')
-        //   {
-        //     $('#' + i).fadeTo('slow', 0.5);
-        //     $('#' + i).html("--");
-        //   }
-        //   else if(ticTacToe.board[i] === player)
-        //     $('#' + i).fadeTo('fast', 1);
-        // }
         updateScore(player);
         setTimeout(function(){
         alert(player + " won!");}, 1000);
-
         gameOver = true;
         return true;
 
         //clear board
         //ticTacToe.board = newBoard;
       }
+      // else{
+      //   moves++;
+      //   if(moves === 8)
+      //   {
+      //     alert("You motha fuckahs tied!");
+      //   }
+      // }
       //switch player
       player = switchPlayer(player);
     }
