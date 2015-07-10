@@ -11,16 +11,18 @@
     <img src="images/face.jpg"/>
     </div>
     <div class ="navItems">
-      <span>Chris' TicTacToe Game!</span>
-      <span>Home</span>
+      <span id="title">Chris' TicTacToe Game!</span>
       <span id="newGame">New Game</span>
+      <span id="credentials">
+      <input id="email" type="text" placeholder="email">
+      <input id="password" type="password" placeholder="password">
+      </span>
+      <input class="btn" id="login" type="button" value="Log In">
+      <input class="btn" id="register" type="button" value="Register">
     </div>
   </div>
   <div class="actionCenter">
     <div>
-      <input id="email" type="text" placeholder="email">
-      <input id="password" type="password" placeholder="password">
-      <input id="register" type="button" value="Register">
       <input type="button" id="login" value="login">
       <input type="button" id="list" value="list">
       <input type="button" id="create" value="create">
@@ -48,6 +50,7 @@
       <textarea id="result"></textarea>
     </div>
   </div>
+  <!-- End of ActionCenter -->
   <div class="mainScreen">
     <div class= "player1Score">
       <div class="playerBoardText">

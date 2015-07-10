@@ -1,14 +1,12 @@
 'use strict';
 
 $(document).ready(function(){
-  var gameOver = false;
+
 
 $('#newGame').click(function(){
   if(gameOver === true)
   {
     startNewGame();
-    gameOver = false;
-    moves = 0;
   }
   else{
     if(confirm("There's a game being played, are you sure you want to start a new one?!?"))

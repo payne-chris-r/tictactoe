@@ -12,6 +12,7 @@ var player = 'X';
 var p1Score = 0;
 var p2Score = 0;
 var moves = 0;
+var gameOver = false;
 
 var updateScore = function(player){
   if(player === 'X')
@@ -166,7 +167,7 @@ var declareWinner = function (){
 };
 
 var startNewGame = function(){
-
+  resetMoves();
   console.log(ticTacToe.board);
   for(var i = 0; i < ticTacToe.board.length; i++)
   {
@@ -174,5 +175,5 @@ var startNewGame = function(){
     $('#' + i).html("-");
     $('#' + i).fadeTo('fast', 1);
   }
-  console.log(ticTacToe.board);
+  gameOver = false;
 };
