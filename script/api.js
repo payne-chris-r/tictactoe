@@ -4,7 +4,7 @@ $(function(){
 //  var sa = '//localhost:3000';
 
   var gameWatcher;
-  var sa = 'https://young-citadel-2431.herokuapp.com';
+  var sa = 'http://ttt.wdibos.com/';
 
   $('#create').on('click', function(e){
     $.ajax(sa + '/games',

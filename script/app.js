@@ -7,13 +7,14 @@ var ticTacToe = {
   //   return true;
   // };
 };
-
+//wrap these in the tictactoe object \/
 var player = 'X';
 var p1Score = 0;
 var p2Score = 0;
 var moves = 0;
 var gameOver = false;
 var editable = '';
+var winners = [];
 
 //UI
 var updateScore = function(player){
@@ -47,7 +48,8 @@ var threeInARow = function(player) {
       if(ticTacToe.board[2] === player)
       {
         console.log("X down the 1st column");
-        return player;
+        winners = [0,1,2];
+        return [0,1,2];
       }
     }
     else if(ticTacToe.board[3] === player)
@@ -55,7 +57,8 @@ var threeInARow = function(player) {
       if(ticTacToe.board[6] === player)
       {
         console.log("X down the 1st row");
-        return player;
+        winners = [0,3,6];
+        return [0,3,6];
       }
     }
     else if(ticTacToe.board[4] === player)
@@ -63,6 +66,7 @@ var threeInARow = function(player) {
       if(ticTacToe.board[8] === player)
       {
         console.log("X diag row");
+        winners = [0,4,8];
         return player;
       }
     }
@@ -75,6 +79,7 @@ var threeInARow = function(player) {
       if(ticTacToe.board[7] === player)
       {
         console.log("X down middle");
+        winners = [1,4,7];
         return player;
       }
     }
@@ -87,6 +92,7 @@ var threeInARow = function(player) {
       if(ticTacToe.board[8] === player)
       {
         console.log("X down 3rd row");
+        winners = [2,5,8];
         return player;
       }
     }
@@ -95,6 +101,7 @@ var threeInARow = function(player) {
       if(ticTacToe.board[6] === player)
       {
         console.log("X backwards diagonal");
+        winners = [2,4,6];
         return player;
       }
     }
@@ -107,6 +114,7 @@ var threeInARow = function(player) {
       if(ticTacToe.board[5] === player)
       {
         console.log("X across the middle row");
+        winners = [3,4,5];
         return player;
       }
     }
@@ -119,6 +127,7 @@ var threeInARow = function(player) {
       if(ticTacToe.board[8] === player)
       {
         console.log("X across the bottom row");
+        winners = [6,7,8];
         return player;
       }
     }
@@ -154,12 +163,13 @@ var showFinalBoard = function(player){
   for(var i = 0; i < ticTacToe.board.length; i++){
           if(ticTacToe.board[i] === '')
           {
-            $('#' + i).fadeTo('slow', 0.5);
-            $('#' + i).html("--");
+            $('#' + i).fadeTo('fast', 0.5);
           }
-          else if(ticTacToe.board[i] === player)
-            $('#' + i).fadeTo('fast', 1);
         }
+  for(var j = 0; j < winners.length; j++)
+  {
+    $('#' + winners[j]).fadeTo('fast', 1);
+  }
 };
 
 //GE
